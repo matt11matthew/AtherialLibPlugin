@@ -1,0 +1,5 @@
+name: AtherialLibPlugin
+version: '${project.version}'
+main: me.matthewe.atheriallibplugin.AtherialLibPlugin
+api-version: '1.20'
+softdepend: [Vault, LuckPerms, PlaceholderAPI, HeadDatabase]
