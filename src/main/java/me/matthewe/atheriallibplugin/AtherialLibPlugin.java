@@ -82,19 +82,26 @@ public final class AtherialLibPlugin extends AtherialLib {
     @Override
     public void initDependencies() {
 
-        BukkitConfig bukkitConfig =new BukkitConfig("depend.yml", this);
+        BukkitConfig bukkitConfig = new BukkitConfig("depend.yml", this);
 
         FileConfiguration c = bukkitConfig.getConfiguration();
         List<Dependency> dependencies = new ArrayList<>();
-        if (c.getBoolean("luckperms")){
+        if (c.getBoolean("luckperms")) {
             dependencies.add(new LuckPermsDependency(this));
         }
-        if (c.getBoolean("vault")){
+        if (c.getBoolean("vault")) {
             dependencies.add(new VaultDependency(this));
         }
-                if (c.getBoolean("headDatabase")){
+        if (c.getBoolean("headDatabase")) {
             dependencies.add(new HeadDatabaseDependency(this));
         }
+        if (c.isSet("debug")) {
+
+            if (c.getBoolean("debug")) {
+                setDebug(true);
+            }
+        }
+
 
         dependencyManager.loadDependencies(dependencies.toArray(new Dependency[]{}));
 

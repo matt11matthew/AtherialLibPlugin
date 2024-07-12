@@ -1,3 +1,4 @@
 vault: true
 luckperms: true
 headDatabase: false
+debug: true
