@@ -79,7 +79,7 @@
           <scope>compile</scope>
           <groupId>me.matthewedevelopment</groupId>
           <artifactId>atheriallib</artifactId>
-          <version>0.36</version>
+          <version>1.0.0</version>
       </dependency>
   </dependencies>
 </project>
