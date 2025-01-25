@@ -103,6 +103,9 @@ public final class AtherialLibPlugin extends AtherialLib {
         }
 
 
+        if (dependencies==null || dependencies.isEmpty()) {
+            return;
+        }
         dependencyManager.loadDependencies(dependencies.toArray(new Dependency[]{}));
 
     }
