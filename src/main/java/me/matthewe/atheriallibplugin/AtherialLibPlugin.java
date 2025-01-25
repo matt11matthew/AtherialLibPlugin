@@ -60,7 +60,10 @@ public final class AtherialLibPlugin extends AtherialLib {
     public void onStart() {
 
 
-        dependencyManager.getDependency(VaultDependency.class).init();
+        if (vaultEnabled){
+
+            dependencyManager.getDependency(VaultDependency.class).init();
+        }
 
 
     }
@@ -79,6 +82,7 @@ public final class AtherialLibPlugin extends AtherialLib {
         }
     }
 
+    private boolean vaultEnabled;
     @Override
     public void initDependencies() {
 
@@ -91,6 +95,7 @@ public final class AtherialLibPlugin extends AtherialLib {
         }
         if (c.getBoolean("vault")) {
             dependencies.add(new VaultDependency(this));
+            vaultEnabled= true;
         }
         if (c.getBoolean("headDatabase")) {
             dependencies.add(new HeadDatabaseDependency(this));
