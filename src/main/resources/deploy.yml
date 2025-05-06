@@ -1,4 +1,5 @@
 restartCommands:
+  - "save-all"
   - "restart"
 restartDelay: 60 #In ticks
 restartMessages:
