@@ -1,5 +1,6 @@
 package me.matthewe.atheriallibplugin;
 
+import me.matthewe.atheriallibplugin.commands.AtherialLibDeployCommand;
 import me.matthewedevelopment.atheriallib.AtherialLib;
 import me.matthewedevelopment.atheriallib.config.BukkitConfig;
 import me.matthewedevelopment.atheriallib.config.yaml.CustomTypeRegistry;
@@ -60,6 +61,7 @@ public final class AtherialLibPlugin extends AtherialLib {
     public void onStart() {
 
 
+        registerAtherialCommand(new AtherialLibDeployCommand(this));
         if (vaultEnabled){
 
             dependencyManager.getDependency(VaultDependency.class).init();

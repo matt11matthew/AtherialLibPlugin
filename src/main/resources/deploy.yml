@@ -1,0 +1,5 @@
+restartCommands:
+  - "restart"
+restartDelay: 60 #In ticks
+restartMessages:
+  - "<aqua><bold>The server is now restarting in <white>%seconds%s</white> due to an update</bold></aqua>"
