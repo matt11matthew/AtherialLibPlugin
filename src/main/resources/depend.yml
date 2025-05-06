@@ -1,4 +1,4 @@
-vault: true
-luckperms: true
+vault: false
+luckperms: false
 headDatabase: false
 debug: true
