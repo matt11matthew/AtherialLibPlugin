@@ -35,6 +35,11 @@ public class AtherialLibDeployCommand  extends AnnotationlessAtherialCommand {
             sender.sendMessage(CONSOLE_ONLY_MSG);
             return;
         }
+        if ((args.length == 1) && args[0].equalsIgnoreCase("closeall")) {
+            for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
+                onlinePlayer.closeInventory();
+            }
+        }
         if ((args.length == 1) && args[0].equalsIgnoreCase("reboot")) {
             for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
 
