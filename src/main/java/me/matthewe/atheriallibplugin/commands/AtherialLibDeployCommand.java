@@ -26,6 +26,11 @@ public class AtherialLibDeployCommand  extends AnnotationlessAtherialCommand {
         config =new RestartConfig(plugin);
 
     }
+    private static boolean deploying = false;
+
+    public static boolean isDeploying() {
+        return deploying;
+    }
 
     private final String CONSOLE_ONLY_MSG = ChatColor.RED +ChatColor.BOLD.toString()+  "This command can only be executed by console";
 
@@ -41,6 +46,7 @@ public class AtherialLibDeployCommand  extends AnnotationlessAtherialCommand {
             }
         }
         if ((args.length == 1) && args[0].equalsIgnoreCase("reboot")) {
+            deploying = true;
             for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
 
                 for (String restartMessage : config.getRestartMessages()) {

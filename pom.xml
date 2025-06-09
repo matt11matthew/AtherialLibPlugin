@@ -6,7 +6,7 @@
 
   <groupId>me.matthewe</groupId>
   <artifactId>AtherialLibPlugin</artifactId>
-  <version>1.0.11</version>
+  <version>1.0.11-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>AtherialLibPlugin</name>
