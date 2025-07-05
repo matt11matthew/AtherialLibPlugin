@@ -3,7 +3,7 @@ name: Nexus Deploy
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch: null
 jobs:
   deploy:
