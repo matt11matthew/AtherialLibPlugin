@@ -62,18 +62,6 @@
   </build>
 
   <repositories>
-      <repository>
-          <id>papermc-repo</id>
-          <url>https://repo.papermc.io/repository/maven-public/</url>
-      </repository>
-      <repository>
-          <id>placeholderapi</id>
-          <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
-      </repository>
-      <repository>
-          <id>sonatype</id>
-          <url>https://oss.sonatype.org/content/groups/public/</url>
-      </repository>
 
       <repository>
           <id>nexus</id>
