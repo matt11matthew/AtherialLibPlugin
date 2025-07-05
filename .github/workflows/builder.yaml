@@ -7,12 +7,11 @@ on:
     types: [created]
 
 jobs:
-  build:
+  snapshot:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Set up Java
         uses: actions/setup-java@v3
@@ -24,12 +23,31 @@ jobs:
       - name: Build with Maven
         run: mvn clean package -DskipTests
 
-      - name: Upload artifact (Snapshot or Release)
+      - name: Upload snapshot artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: snapshot-jar
+          path: target/AtherialLibPlugin.jar
+
+  release:
+    if: github.event_name == 'release'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Build with Maven
+        run: mvn clean package -DskipTests
+
+      - name: Upload release artifact
         uses: softprops/action-gh-release@v1
         with:
-          name: ${{ github.event_name == 'release' && github.event.release.name || 'Snapshot Release' }}
-          tag_name: ${{ github.event_name == 'release' && github.event.release.tag_name || 'snapshot' }}
-          files: |
-            target/AtherialLibPlugin.jar
+          files: target/AtherialLibPlugin.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
