@@ -6,7 +6,7 @@
 
   <groupId>me.matthewe</groupId>
   <artifactId>AtherialLibPlugin</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
   <packaging>jar</packaging>
 
   <name>AtherialLibPlugin</name>
@@ -90,7 +90,7 @@
           <scope>compile</scope>
           <groupId>me.matthewedevelopment</groupId>
           <artifactId>atheriallib</artifactId>
-          <version>1.1.1</version>
+          <version>1.1.2</version>
       </dependency>
   </dependencies>
 </project>
